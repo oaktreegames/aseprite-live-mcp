@@ -30,7 +30,7 @@ jobs:
       # Test on 3.10 — the declared floor — so a typing/runtime break on older
       # Pythons can never ship silently (the suite needs no Aseprite binary;
       # the headless integration test skips itself when Aseprite is absent).
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.10"
 
@@ -39,7 +39,7 @@ jobs:
           python -m pip install ".[dev]"
           python -m pytest tests/ -q
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
