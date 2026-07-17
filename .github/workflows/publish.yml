@@ -25,7 +25,7 @@ jobs:
       contents: read   # REQUIRED so actions/checkout can clone the repo
                        # (declaring `permissions` sets every unlisted scope to none)
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Test on 3.10 — the declared floor — so a typing/runtime break on older
       # Pythons can never ship silently (the suite needs no Aseprite binary;
@@ -60,7 +60,7 @@ jobs:
     permissions:
       contents: write  # create the release (job-scoped; the publish job stays read-only)
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Extract this version's changelog section
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
